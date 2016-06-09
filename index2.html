@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Too Minimal</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Quicksand|Marck+Script">
+    <style type="text/css">
+        body {
+            font-family: 'Quicksand', serif;
+        }
+
+        .line {
+            border: 0;
+            height: 1px;
+            background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+            background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+            background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+            background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+        }
+
+        li,
+        a:hover {
+            text-decoration: none;
+            color: grey;
+        }
+
+        li,
+        a {
+            color: black;
+        }
+    </style>
+    <link href="css/hover.css" rel="stylesheet" media="all">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header" style="text-align:center;">
+            <div class="hvr-bounce-in">
+                <h1 style="font-family: 'Marck Script', serif; font-size:60px;">Your Name</h1>
+            </div>
+        </div>
+        <hr class="line">
+        <div class="row">
+            <div class="col-md-4">
+                <h2>About me</h2>
+                <p>Write Something About Yourself Here.</p>
+                <h4>Likes:</h4>Your likes.
+                <h4>Dislikes:</h4>Your Dislikes.
+                <h2>Contact & Social Media</h2>
+                <i class="fa fa-google" aria-hidden="true"></i>
+                <strong>Email: </strong>example@gmail.com
+                <br>
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+                <strong>Twitter: </strong><a href="https://twitter.com/twitter">@twitter</a>
+                <br>
+                <i class="fa fa-github" aria-hidden="true"></i>
+                <strong>Github: </strong><a href="https://github.com/">Github Account</a>
+            </div>
+            <div class="col-md-4">
+                <h2>Projects</h2>
+                <ul>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h2>My Twitter</h2>
+                <a class="twitter-timeline" href="https://twitter.com/twitter" data-widget-id="731859414030815232" data-chrome="nofooter noborders noscrollbar noheader" data-tweet-limit="2">Tweets by @twitter</a>
+                <script>
+                    ! function(d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0],
+                            p = /^http:/.test(d.location) ? 'http' : 'https';
+                        if (!d.getElementById(id)) {
+                            js = d.createElement(s);
+                            js.id = id;
+                            js.src = p + "://platform.twitter.com/widgets.js";
+                            fjs.parentNode.insertBefore(js, fjs);
+                        }
+                    }(document, "script", "twitter-wjs");
+                </script>
+            </div>
+        </div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+	<script src="js/underscore-min.js"></script>
+    <script src="js/gh3.js"></script>
+    <script>
+    var username = new Gh3.User("FR0ST1N")
+  ,	branchProperties = $("ul");
+  var repo = new Gh3.Repositories(username);
+
+  repo.fetch({page:1, per_page:500},"next", function (err, res) {
+    if(err) {
+      console.log("Error");
+    }
+
+    repo.eachRepository(function (repository) {
+        var SinRepo = new Gh3.Repository(repository.name, username);
+
+        SinRepo.fetch(function (err, res) {
+          if(err) {
+            console.log("Error", err.message, res.status)
+            throw err
+          }
+			
+			if(SinRepo.fork == false){
+			        branchProperties.append(
+          $('<li>').append('<a href="'+SinRepo.html_url+'" class ="hvr-push">'+SinRepo.name+' : '+SinRepo.description+'</a></li>')
+        );
+		}
+        });
+      });
+  });
+  </script>
+</body>
+
+</html>
