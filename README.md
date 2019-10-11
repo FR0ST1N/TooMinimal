@@ -13,7 +13,7 @@
 * Change favicon `images/favicon.png`
 * Change Open Graph thumbnail `images/thumb.jpg`
 
-## Made With
+## Built With
 
 * [Bootstrap](https://getbootstrap.com/)
 * [Font Awesome](https://fontawesome.com/)
@@ -21,4 +21,4 @@
 
 ## License
 
-[**MIT**](https://github.com/FR0ST1N/TooMinimal/blob/gh-pages/LICENSE) 
+This project is licensed under the [**MIT License**](https://github.com/FR0ST1N/TooMinimal/blob/gh-pages/LICENSE) 
