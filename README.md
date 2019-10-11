@@ -1,8 +1,17 @@
-# TooMinimal
+<div align="center">
+<h1>TooMinimal</h1>
 
-![](https://img.shields.io/github/license/FR0ST1N/TooMinimal.svg)
+<strong>One Page Website/Portfolio Template Which is Too Minimal.</strong>
 
-One Page Website/Portfolio Template Which is Too Minimal.
+<img alt="Website" src="https://img.shields.io/website?style=flat-square&url=https%3A%2F%2Ffr0st1n.github.io%2FTooMinimal%2F">
+<img alt="GitHub top language" src="https://img.shields.io/github/languages/top/FR0ST1N/TooMinimal?style=flat-square">
+<img alt="GitHub" src="https://img.shields.io/github/license/FR0ST1N/TooMinimal?style=flat-square">
+</div>
+
+## Usage
+* Edit the `index.hml` file
+* Change favicon `images/favicon.png`
+* Change Open Graph thumbnail `images/thumb.jpg`
 
 ## Made With
 
