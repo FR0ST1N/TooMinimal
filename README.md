@@ -17,7 +17,6 @@
 
 * [Bootstrap](https://getbootstrap.com/)
 * [Font Awesome](https://fontawesome.com/)
-* [Hover.css](https://ianlunn.github.io/Hover/)
 
 ## License
 
